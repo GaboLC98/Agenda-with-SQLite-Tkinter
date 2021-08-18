@@ -58,33 +58,29 @@ def start():
                 start()
             numero=int(input("En que dia desea eliminar:\n1-Lunes\n2-Martes\n3-Miercoles\n4-Jueves\n5-Viernes\n-----> "))
             if numero==1:
-                print(f"TAREAS: {leer_lunes}")
-                eliminar=int(input("¿Que tarea desea eliminar? (nros del 0 a n) ------> "))
+                print(f"TAREAS: {leer_lunes}")                
                 fichero=open("Lunes.txt","w")
                 lineas=leer_lunes
             elif numero==2:
                 print(f"TAREAS: {leer_martes}")
-                eliminar=int(input("¿Que tarea desea eliminar? (nros del 0 a n) ------> "))
-                fichero=open("Miercoles.txt","w")
+                fichero=open("Martes.txt","w")
                 lineas=leer_miercoles             
             elif numero==3:
                 print(f"TAREAS: {leer_miercoles}")
-                eliminar=int(input("¿Que tarea desea eliminar? (nros del 0 a n) ------> "))
-                fichero=open("Jueves.txt","w")
+                fichero=open("Miercoles.txt","w")
                 lineas=leer_jueves               
             elif numero==4:
                 print(f"TAREAS: {leer_jueves}")
-                eliminar=int(input("¿Que tarea desea eliminar? (nros del 0 a n) ------> "))
-                fichero=open("Viernes.txt","w")
+                fichero=open("Jueves.txt","w")
                 lineas=leer_viernes               
             elif numero==5:
                 print(f"TAREAS: {leer_viernes}")
-                eliminar=int(input("¿Que tarea desea eliminar? (nros del 0 a n) ------> "))
-                fichero=open("Lunes.txt","w")
+                fichero=open("Viernes.txt","w")
                 lineas=leer_viernes
             else:
                 print("Opcion incorrecta, vuelva a intentarlo")
                 start()
+            eliminar=int(input("¿Que tarea desea eliminar? (nros del 0 a n) ------> "))
             del_line()     
         elif opcion==3:
             print(f"LUNES: {leer_lunes}\nMARTES: {leer_martes}\nMIERCOLES: {leer_miercoles}\nJUEVES: {leer_jueves}\nVIERNES: {leer_viernes} ")
