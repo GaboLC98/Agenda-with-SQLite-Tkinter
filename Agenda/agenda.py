@@ -3,13 +3,13 @@ from tkinter import *
 from tkinter import ttk
 
 root=Tk()
-root.geometry("250x200")
+root.geometry("500x350")
 root.resizable(0,0)
 root.title("Agenda")
 root.config(bg="white")
 conexion=sqlite3.connect("agenda.db")
 cursor=conexion.cursor()
-titulo_opciones=Label(root,text="¿Que desea realizar?",font=("Curier 12"),bg="white").pack()
+titulo_opciones=Label(root,text="¿Que desea realizar?",font=("Curier 20"),bg="white").pack()
 
 def Agregar(): #Funcion para agregar tareas/cosas para hacer en X dia
     def Guardar_tarea():
@@ -96,20 +96,24 @@ def Ver(): #Funcion para ver a lista de tareas. Si no aparece no hay tarea
 f1=Frame(root,bg="white")
 add=PhotoImage(file="add.gif")
 Label(f1,image=add,bg="white").pack(pady=5,side="left")
-Button(f1,text="Agregar tarea",font=("Curier 9"),command=Agregar,width=15,bg="pale green").pack(pady=5,side="right")
-f1.pack(pady=5)
+Button(f1,text="Agregar tarea",font=("Curier 15"),command=Agregar,width=25,bg="pale green").pack(pady=5,side="right")
+f1.pack(pady=20)
 
 f2=Frame(root,bg="white")
 delete=PhotoImage(file="del.gif")
 Label(f2,image=delete,bg="white",).pack(pady=5,side="left")
-Button(f2,text="Eliminar tarea",font=("Curier 9"),width=15,command=Eliminar,bg="tomato").pack(pady=5,side="right")
-f2.pack(pady=5)
+Button(f2,text="Eliminar tarea",font=("Curier 15"),width=25,command=Eliminar,bg="tomato").pack(pady=5,side="right")
+f2.pack(pady=20)
 
 f3=Frame(root,bg="white")
 search=PhotoImage(file="search.gif")
 Label(f3,image=search,bg="white").pack(pady=5,side="left")
-Button(f3,text="Ver las tareas",font=("Curier 9"),width=15,command=Ver,bg="snow").pack(pady=5,side="right")
-f3.pack(pady=5)
+Button(f3,text="Ver las tareas",font=("Curier 15"),width=25,command=Ver,bg="snow").pack(pady=5,side="right")
+f3.pack(pady=20)
+
+f4=Frame(root,bg="white")
+titulo_opciones=Label(root,text="Realizado por: Gabriel Alejandro Lopez Calderon",font=("Curier 8"),bg="white").pack(side="left")
+f4.pack()
 
 root.mainloop()
 conexion.close()
